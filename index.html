@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="app">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="author" content="Julio Torres">
+        <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
+        <title>Grafos</title>
+        <link href="css/metro.min.css" rel="stylesheet" />
+        <link href="css/metro-responsive.min.css" rel="stylesheet" />
+        <link href="css/metro-icons.css" rel="stylesheet" />
+    </head>
+    <body ng-controller="appCtrl">
+        <a ng-href="{{path}}/nuevoProyecto" class="button">Nuevo Proyecto</a>
+        <a ng-href="{{path}}/abrirProyecto" class="button">Abrir Proyecto</a>
+        <a ng-href="{{path}}/agregarVertice" ng-if='nombreProyecto' class="button">Agregar vertice</a>
+        <a ng-href="{{path}}/agregarArista" ng-if='nombreProyecto' class="button">Agregar Arista</a>
+        <a ng-href="{{path}}/verVertices" ng-if='nombreProyecto' class="button">Ver Vertices</a>
+        <a ng-href="{{path}}/verAristas" ng-if='nombreProyecto' class="button">Ver Aristas</a>
+        <a ng-href="#" ng-if='nombreProyecto' ng-click="resetear()" class="button">Eliminar Todo</a>
+        <a ng-href="{{path}}/graficar" ng-if='nombreProyecto' class="button">Graficar</a>
+        <a ng-href="#" ng-if='nombreProyecto' ng-click="guardar()" class="button">Guardar</a>
+        
+        <div ng-view></div>
+        <script type="text/javascript" src="js/jquery-2.2.1.min.js"></script>
+        <script type="text/javascript" src="js/metro.min.js"></script>
+        <script type="text/javascript" src="js/vis.min.js"></script>
+        <script type="text/javascript" src="js/angular.min.js"></script>
+        <script type="text/javascript" src="js/angular-route.min.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+</html>
